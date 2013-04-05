@@ -1,12 +1,18 @@
 <?php
 session_start();
+
+$path = '/energysolforum.com/googlecalendar/ZendGdata-1.12.3/library';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+
 require_once 'Google_Client.php';
 require_once 'Google_CalendarService.php';
 require_once '../googlecalendar/ZendGdata-1.12.3/library/Zend/Loader.php' ;
+require_once '../googlecalendar/ZendGdata-1.12.3/library/Zend/Gdata.php';
+require_once '../googlecalendar/ZendGdata-1.12.3/library/Zend/Gdata/Calendar.php';
 
 // Inorder to use the Google Data API for inserting events into calendar
-ZendLoader::loadClass('Zend_Gdata');
-ZendLoader::loadClass('Zend_Gdata_Query');
+Zend_Loader::loadClass('Zend_Gdata');
+Zend_Loader::loadClass('Zend_Gdata_Query');
 
 $scriptUri = "http://".$_SERVER["HTTP_HOST"].$_SERVER['PHP_SELF'];
 

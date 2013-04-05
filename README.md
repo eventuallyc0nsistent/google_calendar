@@ -17,17 +17,13 @@ Instantiate a class with new *Google_* prefix
 
 # Install the Zend Framework install for parsing GData
 
-save in the htaccess of the root file
-php_value include_path "../ZendGdata-1.12.3/library"
+###Change your htaccess to include the Zend library . It is different for all versions of ZendGdata
+	
+	php_value include_path "../ZendGdata-1.12.3/library"
 
+Also you need to load these libraries
 
-save as PHP
-top 
-
-load Zend Gdata libraries
-Zend Gdata 
-Zend Gdata Query
-Zend client login
-
-
-Zend Gdata Query
+>Zend Gdata libraries
+>Zend Gdata 
+>Zend Gdata Query
+>Zend client login

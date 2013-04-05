@@ -63,7 +63,7 @@ class Zend_Loader
         $file = self::standardiseFile($class);
 
         if (!empty($dirs)) {
-            // use the autodiscovered path
+            // use the autodiscovered path print
             $dirPath = dirname($file);
             if (is_string($dirs)) {
                 $dirs = explode(PATH_SEPARATOR, $dirs);
