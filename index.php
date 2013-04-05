@@ -15,6 +15,7 @@ $client->setDeveloperKey('AIzaSyCqRbX0IHNhmfR7l3wUnOSSTEvjlG7gfiw'); // API key
 $client->setApplicationName("Calendar");
 
 // $service implements the client interface, has to be set before auth call
+$client->setUseObjects(true); 
 $service = new Google_CalendarService($client);
 
 if (isset($_GET['logout'])) { // logout: destroy token
@@ -44,8 +45,13 @@ if (!$client->getAccessToken()) { // auth call to google
 try {
 //energysolutionsforum.org_n68es4rrhp273jv7vcrg5ik9r4@group.calendar.google.com
 	$events = $service->events->listEvents('energysolutionsforum.org_n68es4rrhp273jv7vcrg5ik9r4@group.calendar.google.com');
-	echo "<pre>";
-	print_r($events);
+	foreach ($events->getItems() as $event ) {
+
+		echo "<pre>";
+		print_r($event);
+		//exit();
+	}
+		
 	
 	// while(true) {
 	//   foreach ($events->getItems() as $event) {
