@@ -24,6 +24,6 @@ Instantiate a class with new *Google_* prefix
 Also you need to load these libraries
 
 >Zend Gdata libraries
->Zend Gdata 
->Zend Gdata Query
->Zend client login
+ Zend Gdata 
+ Zend Gdata Query
+ Zend client login
