@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-require_once 'Google_Client.php';
-require_once 'Google_CalendarService.php';
-
 require_once('Zend/Loader.php') ;
 require_once('Zend/Gdata.php');
 require_once('Zend/Gdata/Calendar.php') ;
@@ -52,8 +49,7 @@ try {
 	// Note that each attribute is crated as an instance of a matching class
 	$event->title = $service->newTitle("Testing Event");
 	$event->where = array($service->newWhere("Mountain View, California"));
-	$event->content =
-	$service->newContent(" This is my awesome event. RSVP required.");
+	$event->content = $service->newContent(" This is my awesome event. RSVP required.");
 	 
 	// Set the date using RFC 3339 format.
 	$startDate = "2013-04-15";
