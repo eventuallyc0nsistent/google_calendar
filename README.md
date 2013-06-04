@@ -23,7 +23,15 @@ Instantiate a class with new *Google_* prefix
 
 Also you need to load these libraries
 
->Zend Gdata libraries
- Zend Gdata 
- Zend Gdata Query
- Zend client login
++Zend Gdata libraries
++Zend Gdata 
++Zend Gdata Query
++Zend client login
+
+# Create $_COOKIES 
+
+If this isn't done you will face an error called
+
+> Badly formatted datetime in attribute
+
+This is to navigate through various domains i.e. Google OAuth and the redirected website
