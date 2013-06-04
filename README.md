@@ -1,4 +1,4 @@
-# Google Calendar API problems
+## Google Calendar API problems
 
 Since we need the *service* class to return *true* we'll have to set objects true for it.
 
@@ -15,7 +15,7 @@ Instantiate a class with new *Google_* prefix
 	$calendar = new Google_Calendar();
 
 
-# Install the Zend Framework install for parsing GData
+## Install the Zend Framework install for parsing GData
 
 ###Change your htaccess to include the Zend library . It is different for all versions of ZendGdata
 	
@@ -28,7 +28,7 @@ Also you need to load these libraries
 +Zend Gdata Query
 +Zend client login
 
-# Create $_COOKIES 
+## Create $_COOKIES 
 
 If this isn't done you will face an error called
 
