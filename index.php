@@ -46,8 +46,7 @@ $client = Zend_Gdata_AuthSub::getHttpClient($_SESSION['cal_token']);
 // create instance of Calendar service via Gdata
 $service = new Zend_Gdata_Calendar($client);
 
-// Create an instance of the Calendar service using an unauthenticated
-// HTTP client
+// Create an instance of the Calendar service using an unauthenticated HTTP client
 // $service = new Zend_Gdata_Calendar();
 
 try {
@@ -61,46 +60,29 @@ try {
 	$event->where = array($service->newWhere($_COOKIE['cal_where']));
 	$event->content = $service->newContent($_COOKIE['cal_desc']);
 	 
-/**/ 
-
 	// Set the date using RFC 3339 format.
 	// $startDate = "2013-04-16";
 	// $startTime = "14:00";
 	// $endDate = "2013-04-16";
 	// $endTime = "16:00";
-	// $tzOffset = "-08";
-	 
+	// $tzOffset = "-08";	 
 
 	$startDate = $_COOKIE['cal_start_date'];
 	$startTime = $_COOKIE['cal_start_time'];
 	$endDate = $_COOKIE['cal_end_date'];
 	$endTime = $_COOKIE['cal_end_time']; 
-
 	$tzOffset = "-05";
 	
 	$when = $service->newWhen();
-	//echo "{$startDate}T{$startTime}:00{$tzOffset}:00";
-	// echo "\n";
-	// echo "{$endDate}T{$endTime}:00{$tzOffset}:00";
-	// expected : 2007-12-05T14:00:00-08:00
-	// starttime: 2013-05-17T07:00:00-05:00	
-	// endtime  : 2013-05-17T07:00:00-05:00
-
 	$when->startTime = "{$startDate}T{$startTime}:00{$tzOffset}:00";
 	$when->endTime = "{$endDate}T{$endTime}:00{$tzOffset}:00";
 	$event->when = array($when);
 
-	// $who = $service->newwho();
-	// $who->setEmail('am@energysolforum.com');
-	// $event->setWho(array($who));
-
-	$email = 'event@energysolforum.com';
+	$email = 'kk@energysolforum.com';
 	// $email = 'event@energysolforum.com';
 	$SendEventNotifications = new Zend_Gdata_Calendar_Extension_SendEventNotifications(); 
-    	$SendEventNotifications->setValue(true); 
-    	// echo "<pre>";
-   	// var_dump($SendEventNotifications);
-   	$event->SendEventNotifications = $SendEventNotifications;
+    	$SendEventNotifications->setValue(true);
+    	$event->SendEventNotifications = $SendEventNotifications;
 
     	$who = $service->newwho();
     	$who->setEmail($email);
